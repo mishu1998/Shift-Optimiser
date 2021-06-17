@@ -52,6 +52,12 @@
     <Compile Include="Forms\AddStaffPage.Designer.cs">
       <DependentUpon>AddStaffPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RotaPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RotaPage.Designer.cs">
+      <DependentUpon>RotaPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Objects\Day.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Forms\MainWindow.cs">
@@ -70,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RotaPage.resx">
+      <DependentUpon>RotaPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

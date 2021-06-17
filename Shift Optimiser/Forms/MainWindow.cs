@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Shift_Optimiser.Forms;
 
 namespace Shift_Optimiser
 {
@@ -42,6 +43,12 @@ namespace Shift_Optimiser
         {
             AddStaffPage addStaffPage = new AddStaffPage(this);
             addStaffPage.Show();
+        }
+
+        private void RotaButton_Click(object sender, EventArgs e)
+        {
+            RotaPage rotaPage = new RotaPage(this);
+            rotaPage.Show();
         }
     }
 }

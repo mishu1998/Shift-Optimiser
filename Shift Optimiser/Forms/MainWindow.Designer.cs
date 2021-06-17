@@ -31,6 +31,7 @@ namespace Shift_Optimiser
         {
             this.staffTable = new System.Windows.Forms.DataGridView();
             this.addStaffButton = new System.Windows.Forms.Button();
+            this.RotaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.staffTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,7 +42,7 @@ namespace Shift_Optimiser
             this.staffTable.Name = "staffTable";
             this.staffTable.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.staffTable.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.staffTable.Size = new System.Drawing.Size(1034, 150);
+            this.staffTable.Size = new System.Drawing.Size(1240, 150);
             this.staffTable.TabIndex = 0;
             // 
             // addStaffButton
@@ -54,11 +55,22 @@ namespace Shift_Optimiser
             this.addStaffButton.UseVisualStyleBackColor = true;
             this.addStaffButton.Click += new System.EventHandler(this.addStaffButton_Click);
             // 
+            // RotaButton
+            // 
+            this.RotaButton.Location = new System.Drawing.Point(129, 295);
+            this.RotaButton.Name = "RotaButton";
+            this.RotaButton.Size = new System.Drawing.Size(75, 23);
+            this.RotaButton.TabIndex = 2;
+            this.RotaButton.Text = "Rota";
+            this.RotaButton.UseVisualStyleBackColor = true;
+            this.RotaButton.Click += new System.EventHandler(this.RotaButton_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1058, 591);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.RotaButton);
             this.Controls.Add(this.addStaffButton);
             this.Controls.Add(this.staffTable);
             this.Name = "MainWindow";
@@ -72,6 +84,7 @@ namespace Shift_Optimiser
 
         private System.Windows.Forms.DataGridView staffTable;
         private System.Windows.Forms.Button addStaffButton;
+        private System.Windows.Forms.Button RotaButton;
     }
 }
 
