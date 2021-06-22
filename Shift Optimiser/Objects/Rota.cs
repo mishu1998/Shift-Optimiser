@@ -21,15 +21,5 @@ namespace Shift_Optimiser
 
         public static double rotaScore = 0;
 
-        public void EvaluateRota()
-        {
-            foreach (Day day in days)
-            {
-                foreach (Shift shift in day.shifts)
-                {
-                    rotaScore += shift.score;
-                }
-            }
-        }
     }
 }

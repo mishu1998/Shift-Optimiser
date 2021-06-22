@@ -13,8 +13,6 @@ namespace Shift_Optimiser
 {
     public partial class MainWindow : Form
     {
-        private Rota rota = new Rota();
-
         public MainWindow()
         {
             InitializeComponent();
