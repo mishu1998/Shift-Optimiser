@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shift_Optimiser.Forms;
+using System.IO;
+using Newtonsoft.Json;
+
 
 namespace Shift_Optimiser
 {
@@ -16,7 +19,21 @@ namespace Shift_Optimiser
         public MainWindow()
         {
             InitializeComponent();
+            LoadConfig();
             refreshTable();
+        }
+
+        private void LoadConfig()
+        {
+            try
+            {
+                string jsonRaw = File.ReadAllText("staffconfig.json");
+                Global.staffMembers = JsonConvert.DeserializeObject<List<Staff>>(jsonRaw);
+            }
+            catch(FileNotFoundException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public void refreshTable()

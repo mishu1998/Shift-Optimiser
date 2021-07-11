@@ -62,7 +62,7 @@ namespace Shift_Optimiser.Forms
                             RotaCell currentCell = rotaCells[staffID * 7 + i];
                             currentCell.shiftType.Text = shift.shiftType;
                             if(shift.duration != new TimeSpan(0))
-                            currentCell.shiftTime.Text = shift.shiftStart.ToString(@"hh\:mm") + " - " + shift.shiftEnd.ToString(@"hh\:mm") + " (" + shift.duration.TotalHours.ToString() + "h)";
+                            currentCell.shiftTime.Text = shift.shiftStart.ToString(@"hh\:mm") + " - " + shift.shiftEnd.ToString(@"hh\:mm") + " (" + shift.duration.TotalHours.ToString() + "h)\n" + shift.score;
                             else
                             {
                                 currentCell.shiftTime.Text = "";

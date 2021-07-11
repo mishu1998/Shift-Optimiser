@@ -15,7 +15,7 @@ namespace Shift_Optimiser
         public TimeSpan shiftStart;
         public TimeSpan shiftEnd;
         public TimeSpan duration;
-        public double score;
+        public double score = 0;
 
         public Shift(Staff staff, string shiftType, DayOfWeek shiftdate, TimeSpan shiftStart, TimeSpan shiftEnd)
         {
@@ -26,6 +26,7 @@ namespace Shift_Optimiser
             this.shiftEnd = shiftEnd;
 
             duration = shiftEnd - shiftStart;
+            Evaluate();
         }
 
         public void ChangeShift(string shiftType, TimeSpan shiftStart, TimeSpan shiftEnd)
@@ -35,6 +36,43 @@ namespace Shift_Optimiser
             this.shiftEnd = shiftEnd;
 
             duration = shiftEnd - shiftStart;
+            Evaluate();
+        }
+
+        public void Evaluate()
+        {
+            // Offset due to the enum starting from Sunday as opposed to Monday
+            int offset = (int)shiftdate + 1;
+            if(offset == 7)
+            {
+                offset = 0;
+            }
+
+            if(duration.TotalHours != 0)
+            switch (staff.shiftPreference[offset])
+            {
+                case 0:
+                        score += 5;
+                        break;
+
+                case 1:
+                        if(shiftStart.TotalHours <= 12)
+                            score += 5;
+                        else
+                            score -= 10;
+                    break;
+
+                case 2:
+                        if (shiftStart.TotalHours > 12)
+                            score += 5;
+                        else
+                            score -= 10;
+                    break;
+
+                case 3:
+                        score -= 1000;
+                    break;
+            }
         }
     }
 }

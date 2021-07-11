@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shift_Optimiser
 {
@@ -32,6 +28,10 @@ namespace Shift_Optimiser
                                     shiftStart = Rota.days[i].startTime;
                                     shiftEnd = shiftStart + TimeSpan.FromHours(staff.contractHours / staff.contractDays);
                                     Rota.days[i].shifts[j].ChangeShift(shiftType, shiftStart, shiftEnd);
+                                    for (int k = shiftStart.Hours; k < shiftEnd.Hours; k++)
+                                    {
+                                        Rota.staffing[i, k]++;
+                                    }
                                     break;
 
                                 case 2: // Afternoon
@@ -39,6 +39,10 @@ namespace Shift_Optimiser
                                     shiftEnd = Rota.days[i].endTime;
                                     shiftStart = shiftEnd - TimeSpan.FromHours(staff.contractHours / staff.contractDays);
                                     Rota.days[i].shifts[j].ChangeShift(shiftType, shiftStart, shiftEnd);
+                                    for (int k = shiftStart.Hours; k < shiftEnd.Hours; k++)
+                                    {
+                                        Rota.staffing[i, k]++;
+                                    }
                                     break;
 
                                 case 3: // Unavaliable

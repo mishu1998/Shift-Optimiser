@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Shift_Optimiser
 {
@@ -65,6 +67,14 @@ namespace Shift_Optimiser
                 shiftPrefrence);
 
             Global.staffMembers.Add(newStaff);
+
+            File.WriteAllText("staffconfig.json", string.Empty);
+            using (StreamWriter file = File.CreateText("staffconfig.json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, Global.staffMembers);
+            }
+
             _owner.refreshTable();
             Dispose();
         }

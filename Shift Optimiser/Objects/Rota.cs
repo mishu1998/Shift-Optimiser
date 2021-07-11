@@ -10,15 +10,16 @@ namespace Shift_Optimiser
     {
         public static Day[] days =
         {
-            new Day(DayOfWeek.Monday, new TimeSpan(9,0,0), new TimeSpan(23,0,0)),
+            new Day(DayOfWeek.Monday, new TimeSpan(8,0,0), new TimeSpan(23,0,0)),
             new Day(DayOfWeek.Tuesday, new TimeSpan(6,0,0), new TimeSpan(23,0,0)),
-            new Day(DayOfWeek.Wednesday, new TimeSpan(9,0,0), new TimeSpan(23,0,0)),
-            new Day(DayOfWeek.Thursday, new TimeSpan(9,0,0), new TimeSpan(23,0,0)),
-            new Day(DayOfWeek.Friday, new TimeSpan(9,0,0), new TimeSpan(23,0,0)),
-            new Day(DayOfWeek.Saturday, new TimeSpan(9,0,0), new TimeSpan(23,0,0)),
+            new Day(DayOfWeek.Wednesday, new TimeSpan(8,0,0), new TimeSpan(23,0,0)),
+            new Day(DayOfWeek.Thursday, new TimeSpan(8,0,0), new TimeSpan(23,0,0)),
+            new Day(DayOfWeek.Friday, new TimeSpan(8,0,0), new TimeSpan(23,0,0)),
+            new Day(DayOfWeek.Saturday, new TimeSpan(8,0,0), new TimeSpan(23,0,0)),
             new Day(DayOfWeek.Sunday, new TimeSpan(11,0,0), new TimeSpan(23,0,0))
         };
 
+        public static int[,] staffing = new int[7, 24];
         public static double rotaScore = 0;
 
     }
